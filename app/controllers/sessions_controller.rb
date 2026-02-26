@@ -11,7 +11,10 @@ class SessionsController < ApplicationController
     # 2. if the user exists -> check if they know their password
     # users password == params["password"]
     # 3. if they know their password -> login is successful
-        if @user["password"] == params["password"]
+        if BCrypt::Password.new(@user["password"]) == params["password"] #could introduce tech debt with old passwords
+          #add cookie
+          #cookies["zebra"] = "giraffe" (if zebra added to cookie jar already)
+          session["user_id"] = @user["id"]
           flash["notice"] = "Welcome."
           redirect_to "/companies"
         else
