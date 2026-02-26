@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources "activities"
   resources "tasks"
   resources "users"
-
+  # get new
+  # post "/users", controller -> users, action -> create"
   resources "sessions"
   # get("/sessions", {:controller => "sessions", :action => "index"})
   # get("/sessions/:id", {:controller => "sessions", :action => "show"})

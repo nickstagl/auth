@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    # render :template => "users/new.html.erb"
   end
 
   def create
